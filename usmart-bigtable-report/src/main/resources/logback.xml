@@ -141,7 +141,7 @@
     
     <logger name="org.mybatis" level="DEBUG" /> -->
     
-    <logger name="com.goldcard.usmart.dao" level="DEBUG"/>
+    <logger name="com.goldcard.usmart.dao" level="INFO"/>
 
 	<root level="${logLevel}">
 		<!-- 生产环境将请stdout去掉 -->
