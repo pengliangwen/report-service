@@ -37,7 +37,7 @@ spring:
       initialize: false
       sqlScriptEncoding: UTF-8
     mysql:
-      jdbc-url: jdbc:mysql://10.200.1.151:3306/usmart?useUnicode=true&characterEncoding=utf8
+      jdbc-url: jdbc:mysql://10.200.1.151:3306/usmart?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
       username: usmart
       password: usmart
       driver-class-name: com.mysql.cj.jdbc.Driver
