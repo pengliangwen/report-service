@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.goldcard.usmart.dao.ch.CollectionRecordMapper">
+  <resultMap id="queryCollectionMap" type="com.goldcard.usmart.domain.report.result.CollectionRecordResultDTO">
+    <result column="EQ_NO" jdbcType="VARCHAR" property="eqNo" />
+    <result column="Create_Time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="Data_Date" jdbcType="TIMESTAMP" property="dataDate" />
+    <result column="Meter_Time" jdbcType="TIMESTAMP" property="meterTime" />
+    <result column="Standard_Sum" jdbcType="VARCHAR" property="standardSum" />
+    <result column="Working_Sum" jdbcType="VARCHAR" property="workingSum" />
+    <result column="Balance_Quantity" jdbcType="VARCHAR" property="balanceQuantity" />
+    <result column="Standard_Flow" jdbcType="VARCHAR" property="standardFlow" />
+    <result column="Working_Flow" jdbcType="VARCHAR" property="workingFlow" />
+    <result column="Temperature" jdbcType="VARCHAR" property="temperature" />
+    <result column="Pressure" jdbcType="VARCHAR" property="pressure" />
+    <result column="cust_name" jdbcType="VARCHAR" property="customerName" />
+  </resultMap>
+  <select id="findByQueryDTO"  fetchSize="-2147483648"
+          resultSetType="FORWARD_ONLY" parameterType="com.goldcard.usmart.domain.report.query.CollectionRecordQueryDTO"  resultMap="queryCollectionMap">
+    select
+    b.EQ_NO,
+    b.Create_Time,
+    b.Data_Date,
+    b.Meter_Time,
+    b.Standard_Sum,
+    b.Working_Sum,
+    b.Balance_Quantity,
+    b.Standard_Flow,
+    b.Working_Flow,
+    b.Temperature,
+    b.Pressure,
+    b.cust_name    
+    FROM collection_record_customer b
+    <where>
+    <if test="eqNo != null and eqNo != ''">
+      and EQ_NO= #{eqNo}
+    </if>
+    <if test="collectionTimeStart != null and collectionTimeEnd != null">
+      and Create_Time <![CDATA[ >=  ]]> toDateTime(toDate(#{collectionTimeStart})) and Create_Time  <![CDATA[ < ]]> addDays(toDateTime(toDate(#{collectionTimeEnd})),1) 
+    </if>
+    <if test="customerName != null">
+      and like(cust_name,#{customerName})
+    </if>
+    <if test="standardFlowStart != null">
+      and Standard_Flow <![CDATA[ >=  ]]> #{standardFlowStart}
+    </if>
+    <if test="standardFlowEnd != null">
+      and Standard_Flow  <![CDATA[ <= ]]> #{standardFlowEnd}
+    </if>
+    <if test="temperatureStart != null">
+      and Temperature <![CDATA[ >=  ]]> #{temperatureStart}
+    </if>
+    <if test="temperatureEnd != null">
+      and Temperature  <![CDATA[ <= ]]> #{temperatureEnd}
+    </if>
+    <if test="pressureStart != null">
+      and Pressure <![CDATA[ >=  ]]> #{pressureStart}
+    </if>
+    <if test="pressureEnd != null">
+      and Pressure  <![CDATA[ <= ]]> #{pressureEnd}
+    </if>
+      and  TENANT_ID = #{tenantId} and like(Org_ID,#{orgId})
+    </where>
+  </select>
+  
+  <insert id="insertCollectionRecord"
+		parameterType="com.goldcard.usmart.domain.CollectionRecord">
+		INSERT INTO collection_record_customer
+		(CR_ID
+		,EQ_ID
+		,EQ_NO
+		,CMD_ID
+		,Create_Time
+		,Reading_Time
+		,Reading_Value
+		,Data_Date
+		,Balance_Quantity
+		,Total_Quantity
+		,Total_Credit
+		,Total_Debit_Quantity
+		,Total_Debit
+		,Meter_Price_ID
+		,Meter_Price_Version
+		,Working_Flow
+		,Standard_Flow
+		,Working_Sum
+		,Standard_Sum
+		,Temperature
+		,Pressure
+		,Meter_Time
+		,Valve_State_ID
+		,TENANT_ID
+		,Org_ID
+		,Price,dev_no
+		,slave_no
+		,cust_name
+		)
+		VALUES
+		(
+		#{crId} ,
+		#{eqId} ,
+		#{eqNo},
+		#{cmdId},
+		#{createTime},
+		#{readingTime},
+		#{readingValue},
+		#{dataDate},
+		#{balanceQuantity},
+		#{totalQuantity},
+		#{totalCredit},
+		#{totalDebitQuantity},
+		#{totalDebit},
+		#{meterPriceId},
+		#{meterPriceVersion},
+		#{workingFlow},#{standardFlow},#{workingSum},#{standardSum},
+		#{temperature},#{pressure},
+		#{meterTime},
+		#{valveStateId},
+		#{tenantId},
+		#{orgId},
+		#{price},#{devNo},#{slaveNo},#{customerName}
+		)
+	</insert>
+	
+	<insert id="insert" parameterType="com.goldcard.usmart.domain.CollectionRecord">
+    insert into collection_record_new (CR_ID, EQ_ID, EQ_NO, 
+      CMD_ID, Create_Time, Reading_Time, 
+      Reading_Value, Data_Date, Balance_Quantity, 
+      Total_Quantity, Total_Credit, Total_Debit_Quantity, 
+      Total_Debit, Meter_Price_ID, Meter_Price_Version, 
+      Working_Flow, Standard_Flow, Working_Sum, 
+      Pressure, Temperature, Standard_Sum, 
+      Meter_Time, Valve_State_ID, TENANT_ID, 
+      Org_ID, Price, dev_no, 
+      slave_no)
+    values (#{crId,jdbcType=VARCHAR}, #{eqId,jdbcType=VARCHAR}, #{eqNo,jdbcType=VARCHAR}, 
+      #{cmdId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{readingTime,jdbcType=TIMESTAMP}, 
+      #{readingValue,jdbcType=DECIMAL}, #{dataDate,jdbcType=TIMESTAMP}, #{balanceQuantity,jdbcType=DECIMAL}, 
+      #{totalQuantity,jdbcType=DECIMAL}, #{totalCredit,jdbcType=DECIMAL}, #{totalDebitQuantity,jdbcType=DECIMAL}, 
+      #{totalDebit,jdbcType=DECIMAL}, #{meterPriceId,jdbcType=VARCHAR}, #{meterPriceVersion,jdbcType=DECIMAL}, 
+      #{workingFlow,jdbcType=DECIMAL}, #{standardFlow,jdbcType=DECIMAL}, #{workingSum,jdbcType=DECIMAL}, 
+      #{pressure,jdbcType=DECIMAL}, #{temperature,jdbcType=DECIMAL}, #{standardSum,jdbcType=DECIMAL}, 
+      #{meterTime,jdbcType=TIMESTAMP}, #{valveStateId,jdbcType=VARCHAR}, #{tenantId,jdbcType=VARCHAR}, 
+      #{orgId,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{devNo,jdbcType=VARCHAR}, 
+      #{slaveNo,jdbcType=VARCHAR})
+  </insert>
+</mapper>

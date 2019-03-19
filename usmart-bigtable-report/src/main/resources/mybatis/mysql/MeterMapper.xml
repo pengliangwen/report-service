@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.goldcard.usmart.dao.mysql.MeterMapper">
+  <resultMap id="BaseResultMap" type="com.goldcard.usmart.domain.Meter">
+    <id column="meter_id" jdbcType="VARCHAR" property="meterId" />
+    <result column="meter_Param_Value" jdbcType="VARCHAR" property="meterParamValue" />
+    <result column="mt_id" jdbcType="VARCHAR" property="mtId" />
+    <result column="meter_no" jdbcType="VARCHAR" property="meterNo" />
+    <result column="asset_date" jdbcType="TIMESTAMP" property="assetDate" />
+    <result column="expire_date" jdbcType="TIMESTAMP" property="expireDate" />
+    <result column="install_state_id" jdbcType="VARCHAR" property="installStateId" />
+    <result column="add_des" jdbcType="VARCHAR" property="addDes" />
+    <result column="user_no" jdbcType="VARCHAR" property="userNo" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="customer_type" jdbcType="VARCHAR" property="customerType" />
+    <result column="set_up_time" jdbcType="TIMESTAMP" property="setUpTime" />
+    <result column="set_up_location" jdbcType="VARCHAR" property="setUpLocation" />
+    <result column="gas_environment" jdbcType="VARCHAR" property="gasEnvironment" />
+    <result column="enable_meter_reading" jdbcType="DECIMAL" property="enableMeterReading" />
+    <result column="card_direction" jdbcType="VARCHAR" property="cardDirection" />
+    <result column="gas_direction" jdbcType="VARCHAR" property="gasDirection" />
+    <result column="valve_state_id" jdbcType="VARCHAR" property="valveStateId" />
+    <result column="valve_state_time" jdbcType="TIMESTAMP" property="valveStateTime" />
+    <result column="meter_reading" jdbcType="DECIMAL" property="meterReading" />
+    <result column="meter_reading_time" jdbcType="TIMESTAMP" property="meterReadingTime" />
+    <result column="meter_parameter" jdbcType="VARCHAR" property="meterParameter" />
+    <result column="meter_time" jdbcType="TIMESTAMP" property="meterTime" />
+    <result column="signal_grade" jdbcType="DECIMAL" property="signalGrade" />
+    <result column="current_cell_voltage" jdbcType="DECIMAL" property="currentCellVoltage" />
+    <result column="alert_Param_Value" jdbcType="VARCHAR" property="alertParamValue" />
+    <result column="meter_Alarm_Value" jdbcType="VARCHAR" property="meterAlarmValue" />
+    <result column="meter_State_Value" jdbcType="VARCHAR" property="meterStateValue" />
+    <result column="price_id" jdbcType="VARCHAR" property="priceId" />
+    <result column="price_version" jdbcType="DECIMAL" property="priceVersion" />
+    <result column="Last_Price_Id" jdbcType="VARCHAR" property="lastPriceId" />
+    <result column="Last_Price_Version" jdbcType="DECIMAL" property="lastPriceVersion" />
+    <result column="total_debit_qty" jdbcType="DECIMAL" property="totalDebitQty" />
+    <result column="total_debit_num" jdbcType="INTEGER" property="totalDebitNum" />
+    <result column="total_debit_amt" jdbcType="DECIMAL" property="totalDebitAmt" />
+    <result column="last_debit_qty" jdbcType="DECIMAL" property="lastDebitQty" />
+    <result column="last_debit_amt" jdbcType="DECIMAL" property="lastDebitAmt" />
+    <result column="last_debit_date" jdbcType="TIMESTAMP" property="lastDebitDate" />
+    <result column="meter_balance_amt" jdbcType="DECIMAL" property="meterBalanceAmt" />
+    <result column="meter_balance_qty" jdbcType="DECIMAL" property="meterBalanceQty" />
+    <result column="meter_debit_amt" jdbcType="DECIMAL" property="meterDebitAmt" />
+    <result column="meter_debit_qty" jdbcType="DECIMAL" property="meterDebitQty" />
+    <result column="cur_price_index" jdbcType="INTEGER" property="curPriceIndex" />
+    <result column="data_date" jdbcType="TIMESTAMP" property="dataDate" />
+    <result column="last_bill_read" jdbcType="DECIMAL" property="lastBillRead" />
+    <result column="cycle_start_day" jdbcType="TIMESTAMP" property="cycleStartDay" />
+    <result column="cycle_start_read" jdbcType="DECIMAL" property="cycleStartRead" />
+    <result column="cycle_end_day" jdbcType="TIMESTAMP" property="cycleEndDay" />
+    <result column="old_meter_qty" jdbcType="DECIMAL" property="oldMeterQty" />
+    <result column="Mobile_Carrier_id" jdbcType="VARCHAR" property="mobileCarrierId" />
+    <result column="SIM_UIM" jdbcType="VARCHAR" property="simUim" />
+    <result column="Local_IP" jdbcType="VARCHAR" property="localIp" />
+    <result column="Local_Port" jdbcType="VARCHAR" property="localPort" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="modified_time" jdbcType="TIMESTAMP" property="modifiedTime" />
+    <result column="TENANT_ID" jdbcType="VARCHAR" property="tenantId" />
+    <result column="modifior" jdbcType="VARCHAR" property="modifior" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="PT_ID" jdbcType="VARCHAR" property="ptId" />
+    <result column="group_id" jdbcType="VARCHAR" property="groupId" />
+    <result column="dev_no" jdbcType="VARCHAR" property="devNo" />
+    <result column="slave_no" jdbcType="VARCHAR" property="slaveNo" />
+    <result column="cur_price" jdbcType="DECIMAL" property="curPrice" />
+    <result column="dev_type" jdbcType="VARCHAR" property="devType" />
+    <result column="Online_state" jdbcType="VARCHAR" property="onlineState" />
+    <result column="y" jdbcType="VARCHAR" property="y" />
+    <result column="x" jdbcType="VARCHAR" property="x" />
+    <result column="meter_collection_date" jdbcType="TIMESTAMP" property="meterCollectionDate" />
+    <result column="meter_pricing_num" jdbcType="INTEGER" property="meterPricingNum" />
+    <result column="valve_ctrl_param_value" jdbcType="VARCHAR" property="valveCtrlParamValue" />
+    <result column="Price_Param_Value" jdbcType="VARCHAR" property="priceParamValue" />
+    <result column="dev_ptid" jdbcType="VARCHAR" property="devPtid" />
+    <result column="last_collection_reading" jdbcType="DECIMAL" property="lastCollectionReading" />
+    <result column="last_collection_time" jdbcType="TIMESTAMP" property="lastCollectionTime" />
+    <result column="resp_delay_time" jdbcType="INTEGER" property="respDelayTime" />
+    <result column="manu_id" jdbcType="VARCHAR" property="manuId" />
+    <result column="price_effective_date" jdbcType="DATE" property="priceEffectiveDate" />
+    <result column="each_surplus_qty" jdbcType="VARCHAR" property="eachSurplusQty" />
+    <result column="collector_no" jdbcType="VARCHAR" property="collectorNo" />
+    <result column="phone_no" jdbcType="VARCHAR" property="phoneNo" />
+    <result column="product_marking" jdbcType="VARCHAR" property="productMarking" />
+    <result column="protocol_version" jdbcType="VARCHAR" property="protocolVersion" />
+    <result column="upgrade_status" jdbcType="VARCHAR" property="upgradeStatus" />
+    <result column="wechat_no" jdbcType="VARCHAR" property="wechatNo" />
+    <result column="PROTOCOLPARAM_BATCH_ID" jdbcType="VARCHAR" property="protocolparamBatchId" />
+    <result column="ALARMPARAM_BATCH_ID" jdbcType="VARCHAR" property="alarmparamBatchId" />
+    <result column="VALVECONTROL_BATCH_ID" jdbcType="VARCHAR" property="valvecontrolBatchId" />
+    <result column="OPEN_VALVE_BATCH_ID" jdbcType="VARCHAR" property="openValveBatchId" />
+    <result column="OPEN_VALVE_BATCH_STATE" jdbcType="VARCHAR" property="openValveBatchState" />
+    <result column="CLOSE_VALVE_BATCH_ID" jdbcType="VARCHAR" property="closeValveBatchId" />
+    <result column="CLOSE_VALVE_BATCH_STATE" jdbcType="VARCHAR" property="closeValveBatchState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    meter_id, meter_Param_Value, mt_id, meter_no, asset_date, expire_date, install_state_id, 
+    add_des, user_no, customer_name, customer_type, set_up_time, set_up_location, gas_environment, 
+    enable_meter_reading, card_direction, gas_direction, valve_state_id, valve_state_time, 
+    meter_reading, meter_reading_time, meter_parameter, meter_time, signal_grade, current_cell_voltage, 
+    alert_Param_Value, meter_Alarm_Value, meter_State_Value, price_id, price_version, 
+    Last_Price_Id, Last_Price_Version, total_debit_qty, total_debit_num, total_debit_amt, 
+    last_debit_qty, last_debit_amt, last_debit_date, meter_balance_amt, meter_balance_qty, 
+    meter_debit_amt, meter_debit_qty, cur_price_index, data_date, last_bill_read, cycle_start_day, 
+    cycle_start_read, cycle_end_day, old_meter_qty, Mobile_Carrier_id, SIM_UIM, Local_IP, 
+    Local_Port, version, org_id, modified_time, TENANT_ID, modifior, create_time, creator, 
+    remarks, PT_ID, group_id, dev_no, slave_no, cur_price, dev_type, Online_state, y, 
+    x, meter_collection_date, meter_pricing_num, valve_ctrl_param_value, Price_Param_Value, 
+    dev_ptid, last_collection_reading, last_collection_time, resp_delay_time, manu_id, 
+    price_effective_date, each_surplus_qty, collector_no, phone_no, product_marking, 
+    protocol_version, upgrade_status, wechat_no, PROTOCOLPARAM_BATCH_ID, ALARMPARAM_BATCH_ID, 
+    VALVECONTROL_BATCH_ID, OPEN_VALVE_BATCH_ID, OPEN_VALVE_BATCH_STATE, CLOSE_VALVE_BATCH_ID, 
+    CLOSE_VALVE_BATCH_STATE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from meter
+    where meter_id = #{meterId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from meter
+    where meter_id = #{meterId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.goldcard.usmart.domain.Meter">
+    insert into meter (meter_id, meter_Param_Value, mt_id, 
+      meter_no, asset_date, expire_date, 
+      install_state_id, add_des, user_no, 
+      customer_name, customer_type, set_up_time, 
+      set_up_location, gas_environment, enable_meter_reading, 
+      card_direction, gas_direction, valve_state_id, 
+      valve_state_time, meter_reading, meter_reading_time, 
+      meter_parameter, meter_time, signal_grade, 
+      current_cell_voltage, alert_Param_Value, meter_Alarm_Value, 
+      meter_State_Value, price_id, price_version, 
+      Last_Price_Id, Last_Price_Version, total_debit_qty, 
+      total_debit_num, total_debit_amt, last_debit_qty, 
+      last_debit_amt, last_debit_date, meter_balance_amt, 
+      meter_balance_qty, meter_debit_amt, meter_debit_qty, 
+      cur_price_index, data_date, last_bill_read, 
+      cycle_start_day, cycle_start_read, cycle_end_day, 
+      old_meter_qty, Mobile_Carrier_id, SIM_UIM, 
+      Local_IP, Local_Port, version, 
+      org_id, modified_time, TENANT_ID, 
+      modifior, create_time, creator, 
+      remarks, PT_ID, group_id, 
+      dev_no, slave_no, cur_price, 
+      dev_type, Online_state, y, 
+      x, meter_collection_date, meter_pricing_num, 
+      valve_ctrl_param_value, Price_Param_Value, dev_ptid, 
+      last_collection_reading, last_collection_time, 
+      resp_delay_time, manu_id, price_effective_date, 
+      each_surplus_qty, collector_no, phone_no, 
+      product_marking, protocol_version, upgrade_status, 
+      wechat_no, PROTOCOLPARAM_BATCH_ID, ALARMPARAM_BATCH_ID, 
+      VALVECONTROL_BATCH_ID, OPEN_VALVE_BATCH_ID, 
+      OPEN_VALVE_BATCH_STATE, CLOSE_VALVE_BATCH_ID, 
+      CLOSE_VALVE_BATCH_STATE)
+    values (#{meterId,jdbcType=VARCHAR}, #{meterParamValue,jdbcType=VARCHAR}, #{mtId,jdbcType=VARCHAR}, 
+      #{meterNo,jdbcType=VARCHAR}, #{assetDate,jdbcType=TIMESTAMP}, #{expireDate,jdbcType=TIMESTAMP}, 
+      #{installStateId,jdbcType=VARCHAR}, #{addDes,jdbcType=VARCHAR}, #{userNo,jdbcType=VARCHAR}, 
+      #{customerName,jdbcType=VARCHAR}, #{customerType,jdbcType=VARCHAR}, #{setUpTime,jdbcType=TIMESTAMP}, 
+      #{setUpLocation,jdbcType=VARCHAR}, #{gasEnvironment,jdbcType=VARCHAR}, #{enableMeterReading,jdbcType=DECIMAL}, 
+      #{cardDirection,jdbcType=VARCHAR}, #{gasDirection,jdbcType=VARCHAR}, #{valveStateId,jdbcType=VARCHAR}, 
+      #{valveStateTime,jdbcType=TIMESTAMP}, #{meterReading,jdbcType=DECIMAL}, #{meterReadingTime,jdbcType=TIMESTAMP}, 
+      #{meterParameter,jdbcType=VARCHAR}, #{meterTime,jdbcType=TIMESTAMP}, #{signalGrade,jdbcType=DECIMAL}, 
+      #{currentCellVoltage,jdbcType=DECIMAL}, #{alertParamValue,jdbcType=VARCHAR}, #{meterAlarmValue,jdbcType=VARCHAR}, 
+      #{meterStateValue,jdbcType=VARCHAR}, #{priceId,jdbcType=VARCHAR}, #{priceVersion,jdbcType=DECIMAL}, 
+      #{lastPriceId,jdbcType=VARCHAR}, #{lastPriceVersion,jdbcType=DECIMAL}, #{totalDebitQty,jdbcType=DECIMAL}, 
+      #{totalDebitNum,jdbcType=INTEGER}, #{totalDebitAmt,jdbcType=DECIMAL}, #{lastDebitQty,jdbcType=DECIMAL}, 
+      #{lastDebitAmt,jdbcType=DECIMAL}, #{lastDebitDate,jdbcType=TIMESTAMP}, #{meterBalanceAmt,jdbcType=DECIMAL}, 
+      #{meterBalanceQty,jdbcType=DECIMAL}, #{meterDebitAmt,jdbcType=DECIMAL}, #{meterDebitQty,jdbcType=DECIMAL}, 
+      #{curPriceIndex,jdbcType=INTEGER}, #{dataDate,jdbcType=TIMESTAMP}, #{lastBillRead,jdbcType=DECIMAL}, 
+      #{cycleStartDay,jdbcType=TIMESTAMP}, #{cycleStartRead,jdbcType=DECIMAL}, #{cycleEndDay,jdbcType=TIMESTAMP}, 
+      #{oldMeterQty,jdbcType=DECIMAL}, #{mobileCarrierId,jdbcType=VARCHAR}, #{simUim,jdbcType=VARCHAR}, 
+      #{localIp,jdbcType=VARCHAR}, #{localPort,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, 
+      #{orgId,jdbcType=VARCHAR}, #{modifiedTime,jdbcType=TIMESTAMP}, #{tenantId,jdbcType=VARCHAR}, 
+      #{modifior,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{creator,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR}, #{ptId,jdbcType=VARCHAR}, #{groupId,jdbcType=VARCHAR}, 
+      #{devNo,jdbcType=VARCHAR}, #{slaveNo,jdbcType=VARCHAR}, #{curPrice,jdbcType=DECIMAL}, 
+      #{devType,jdbcType=VARCHAR}, #{onlineState,jdbcType=VARCHAR}, #{y,jdbcType=VARCHAR}, 
+      #{x,jdbcType=VARCHAR}, #{meterCollectionDate,jdbcType=TIMESTAMP}, #{meterPricingNum,jdbcType=INTEGER}, 
+      #{valveCtrlParamValue,jdbcType=VARCHAR}, #{priceParamValue,jdbcType=VARCHAR}, #{devPtid,jdbcType=VARCHAR}, 
+      #{lastCollectionReading,jdbcType=DECIMAL}, #{lastCollectionTime,jdbcType=TIMESTAMP}, 
+      #{respDelayTime,jdbcType=INTEGER}, #{manuId,jdbcType=VARCHAR}, #{priceEffectiveDate,jdbcType=DATE}, 
+      #{eachSurplusQty,jdbcType=VARCHAR}, #{collectorNo,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, 
+      #{productMarking,jdbcType=VARCHAR}, #{protocolVersion,jdbcType=VARCHAR}, #{upgradeStatus,jdbcType=VARCHAR}, 
+      #{wechatNo,jdbcType=VARCHAR}, #{protocolparamBatchId,jdbcType=VARCHAR}, #{alarmparamBatchId,jdbcType=VARCHAR}, 
+      #{valvecontrolBatchId,jdbcType=VARCHAR}, #{openValveBatchId,jdbcType=VARCHAR}, 
+      #{openValveBatchState,jdbcType=VARCHAR}, #{closeValveBatchId,jdbcType=VARCHAR}, 
+      #{closeValveBatchState,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.goldcard.usmart.domain.Meter">
+    insert into meter
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="meterId != null">
+        meter_id,
+      </if>
+      <if test="meterParamValue != null">
+        meter_Param_Value,
+      </if>
+      <if test="mtId != null">
+        mt_id,
+      </if>
+      <if test="meterNo != null">
+        meter_no,
+      </if>
+      <if test="assetDate != null">
+        asset_date,
+      </if>
+      <if test="expireDate != null">
+        expire_date,
+      </if>
+      <if test="installStateId != null">
+        install_state_id,
+      </if>
+      <if test="addDes != null">
+        add_des,
+      </if>
+      <if test="userNo != null">
+        user_no,
+      </if>
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="customerType != null">
+        customer_type,
+      </if>
+      <if test="setUpTime != null">
+        set_up_time,
+      </if>
+      <if test="setUpLocation != null">
+        set_up_location,
+      </if>
+      <if test="gasEnvironment != null">
+        gas_environment,
+      </if>
+      <if test="enableMeterReading != null">
+        enable_meter_reading,
+      </if>
+      <if test="cardDirection != null">
+        card_direction,
+      </if>
+      <if test="gasDirection != null">
+        gas_direction,
+      </if>
+      <if test="valveStateId != null">
+        valve_state_id,
+      </if>
+      <if test="valveStateTime != null">
+        valve_state_time,
+      </if>
+      <if test="meterReading != null">
+        meter_reading,
+      </if>
+      <if test="meterReadingTime != null">
+        meter_reading_time,
+      </if>
+      <if test="meterParameter != null">
+        meter_parameter,
+      </if>
+      <if test="meterTime != null">
+        meter_time,
+      </if>
+      <if test="signalGrade != null">
+        signal_grade,
+      </if>
+      <if test="currentCellVoltage != null">
+        current_cell_voltage,
+      </if>
+      <if test="alertParamValue != null">
+        alert_Param_Value,
+      </if>
+      <if test="meterAlarmValue != null">
+        meter_Alarm_Value,
+      </if>
+      <if test="meterStateValue != null">
+        meter_State_Value,
+      </if>
+      <if test="priceId != null">
+        price_id,
+      </if>
+      <if test="priceVersion != null">
+        price_version,
+      </if>
+      <if test="lastPriceId != null">
+        Last_Price_Id,
+      </if>
+      <if test="lastPriceVersion != null">
+        Last_Price_Version,
+      </if>
+      <if test="totalDebitQty != null">
+        total_debit_qty,
+      </if>
+      <if test="totalDebitNum != null">
+        total_debit_num,
+      </if>
+      <if test="totalDebitAmt != null">
+        total_debit_amt,
+      </if>
+      <if test="lastDebitQty != null">
+        last_debit_qty,
+      </if>
+      <if test="lastDebitAmt != null">
+        last_debit_amt,
+      </if>
+      <if test="lastDebitDate != null">
+        last_debit_date,
+      </if>
+      <if test="meterBalanceAmt != null">
+        meter_balance_amt,
+      </if>
+      <if test="meterBalanceQty != null">
+        meter_balance_qty,
+      </if>
+      <if test="meterDebitAmt != null">
+        meter_debit_amt,
+      </if>
+      <if test="meterDebitQty != null">
+        meter_debit_qty,
+      </if>
+      <if test="curPriceIndex != null">
+        cur_price_index,
+      </if>
+      <if test="dataDate != null">
+        data_date,
+      </if>
+      <if test="lastBillRead != null">
+        last_bill_read,
+      </if>
+      <if test="cycleStartDay != null">
+        cycle_start_day,
+      </if>
+      <if test="cycleStartRead != null">
+        cycle_start_read,
+      </if>
+      <if test="cycleEndDay != null">
+        cycle_end_day,
+      </if>
+      <if test="oldMeterQty != null">
+        old_meter_qty,
+      </if>
+      <if test="mobileCarrierId != null">
+        Mobile_Carrier_id,
+      </if>
+      <if test="simUim != null">
+        SIM_UIM,
+      </if>
+      <if test="localIp != null">
+        Local_IP,
+      </if>
+      <if test="localPort != null">
+        Local_Port,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="modifiedTime != null">
+        modified_time,
+      </if>
+      <if test="tenantId != null">
+        TENANT_ID,
+      </if>
+      <if test="modifior != null">
+        modifior,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="ptId != null">
+        PT_ID,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="devNo != null">
+        dev_no,
+      </if>
+      <if test="slaveNo != null">
+        slave_no,
+      </if>
+      <if test="curPrice != null">
+        cur_price,
+      </if>
+      <if test="devType != null">
+        dev_type,
+      </if>
+      <if test="onlineState != null">
+        Online_state,
+      </if>
+      <if test="y != null">
+        y,
+      </if>
+      <if test="x != null">
+        x,
+      </if>
+      <if test="meterCollectionDate != null">
+        meter_collection_date,
+      </if>
+      <if test="meterPricingNum != null">
+        meter_pricing_num,
+      </if>
+      <if test="valveCtrlParamValue != null">
+        valve_ctrl_param_value,
+      </if>
+      <if test="priceParamValue != null">
+        Price_Param_Value,
+      </if>
+      <if test="devPtid != null">
+        dev_ptid,
+      </if>
+      <if test="lastCollectionReading != null">
+        last_collection_reading,
+      </if>
+      <if test="lastCollectionTime != null">
+        last_collection_time,
+      </if>
+      <if test="respDelayTime != null">
+        resp_delay_time,
+      </if>
+      <if test="manuId != null">
+        manu_id,
+      </if>
+      <if test="priceEffectiveDate != null">
+        price_effective_date,
+      </if>
+      <if test="eachSurplusQty != null">
+        each_surplus_qty,
+      </if>
+      <if test="collectorNo != null">
+        collector_no,
+      </if>
+      <if test="phoneNo != null">
+        phone_no,
+      </if>
+      <if test="productMarking != null">
+        product_marking,
+      </if>
+      <if test="protocolVersion != null">
+        protocol_version,
+      </if>
+      <if test="upgradeStatus != null">
+        upgrade_status,
+      </if>
+      <if test="wechatNo != null">
+        wechat_no,
+      </if>
+      <if test="protocolparamBatchId != null">
+        PROTOCOLPARAM_BATCH_ID,
+      </if>
+      <if test="alarmparamBatchId != null">
+        ALARMPARAM_BATCH_ID,
+      </if>
+      <if test="valvecontrolBatchId != null">
+        VALVECONTROL_BATCH_ID,
+      </if>
+      <if test="openValveBatchId != null">
+        OPEN_VALVE_BATCH_ID,
+      </if>
+      <if test="openValveBatchState != null">
+        OPEN_VALVE_BATCH_STATE,
+      </if>
+      <if test="closeValveBatchId != null">
+        CLOSE_VALVE_BATCH_ID,
+      </if>
+      <if test="closeValveBatchState != null">
+        CLOSE_VALVE_BATCH_STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="meterId != null">
+        #{meterId,jdbcType=VARCHAR},
+      </if>
+      <if test="meterParamValue != null">
+        #{meterParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="mtId != null">
+        #{mtId,jdbcType=VARCHAR},
+      </if>
+      <if test="meterNo != null">
+        #{meterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="assetDate != null">
+        #{assetDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireDate != null">
+        #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installStateId != null">
+        #{installStateId,jdbcType=VARCHAR},
+      </if>
+      <if test="addDes != null">
+        #{addDes,jdbcType=VARCHAR},
+      </if>
+      <if test="userNo != null">
+        #{userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null">
+        #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="setUpTime != null">
+        #{setUpTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="setUpLocation != null">
+        #{setUpLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="gasEnvironment != null">
+        #{gasEnvironment,jdbcType=VARCHAR},
+      </if>
+      <if test="enableMeterReading != null">
+        #{enableMeterReading,jdbcType=DECIMAL},
+      </if>
+      <if test="cardDirection != null">
+        #{cardDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="gasDirection != null">
+        #{gasDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="valveStateId != null">
+        #{valveStateId,jdbcType=VARCHAR},
+      </if>
+      <if test="valveStateTime != null">
+        #{valveStateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterReading != null">
+        #{meterReading,jdbcType=DECIMAL},
+      </if>
+      <if test="meterReadingTime != null">
+        #{meterReadingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterParameter != null">
+        #{meterParameter,jdbcType=VARCHAR},
+      </if>
+      <if test="meterTime != null">
+        #{meterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signalGrade != null">
+        #{signalGrade,jdbcType=DECIMAL},
+      </if>
+      <if test="currentCellVoltage != null">
+        #{currentCellVoltage,jdbcType=DECIMAL},
+      </if>
+      <if test="alertParamValue != null">
+        #{alertParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="meterAlarmValue != null">
+        #{meterAlarmValue,jdbcType=VARCHAR},
+      </if>
+      <if test="meterStateValue != null">
+        #{meterStateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="priceId != null">
+        #{priceId,jdbcType=VARCHAR},
+      </if>
+      <if test="priceVersion != null">
+        #{priceVersion,jdbcType=DECIMAL},
+      </if>
+      <if test="lastPriceId != null">
+        #{lastPriceId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastPriceVersion != null">
+        #{lastPriceVersion,jdbcType=DECIMAL},
+      </if>
+      <if test="totalDebitQty != null">
+        #{totalDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="totalDebitNum != null">
+        #{totalDebitNum,jdbcType=INTEGER},
+      </if>
+      <if test="totalDebitAmt != null">
+        #{totalDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitQty != null">
+        #{lastDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitAmt != null">
+        #{lastDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitDate != null">
+        #{lastDebitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterBalanceAmt != null">
+        #{meterBalanceAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="meterBalanceQty != null">
+        #{meterBalanceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="meterDebitAmt != null">
+        #{meterDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="meterDebitQty != null">
+        #{meterDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="curPriceIndex != null">
+        #{curPriceIndex,jdbcType=INTEGER},
+      </if>
+      <if test="dataDate != null">
+        #{dataDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastBillRead != null">
+        #{lastBillRead,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleStartDay != null">
+        #{cycleStartDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cycleStartRead != null">
+        #{cycleStartRead,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleEndDay != null">
+        #{cycleEndDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oldMeterQty != null">
+        #{oldMeterQty,jdbcType=DECIMAL},
+      </if>
+      <if test="mobileCarrierId != null">
+        #{mobileCarrierId,jdbcType=VARCHAR},
+      </if>
+      <if test="simUim != null">
+        #{simUim,jdbcType=VARCHAR},
+      </if>
+      <if test="localIp != null">
+        #{localIp,jdbcType=VARCHAR},
+      </if>
+      <if test="localPort != null">
+        #{localPort,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tenantId != null">
+        #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="modifior != null">
+        #{modifior,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="ptId != null">
+        #{ptId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="devNo != null">
+        #{devNo,jdbcType=VARCHAR},
+      </if>
+      <if test="slaveNo != null">
+        #{slaveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="curPrice != null">
+        #{curPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="devType != null">
+        #{devType,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineState != null">
+        #{onlineState,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null">
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null">
+        #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="meterCollectionDate != null">
+        #{meterCollectionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterPricingNum != null">
+        #{meterPricingNum,jdbcType=INTEGER},
+      </if>
+      <if test="valveCtrlParamValue != null">
+        #{valveCtrlParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="priceParamValue != null">
+        #{priceParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="devPtid != null">
+        #{devPtid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCollectionReading != null">
+        #{lastCollectionReading,jdbcType=DECIMAL},
+      </if>
+      <if test="lastCollectionTime != null">
+        #{lastCollectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="respDelayTime != null">
+        #{respDelayTime,jdbcType=INTEGER},
+      </if>
+      <if test="manuId != null">
+        #{manuId,jdbcType=VARCHAR},
+      </if>
+      <if test="priceEffectiveDate != null">
+        #{priceEffectiveDate,jdbcType=DATE},
+      </if>
+      <if test="eachSurplusQty != null">
+        #{eachSurplusQty,jdbcType=VARCHAR},
+      </if>
+      <if test="collectorNo != null">
+        #{collectorNo,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productMarking != null">
+        #{productMarking,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolVersion != null">
+        #{protocolVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="upgradeStatus != null">
+        #{upgradeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNo != null">
+        #{wechatNo,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolparamBatchId != null">
+        #{protocolparamBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmparamBatchId != null">
+        #{alarmparamBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="valvecontrolBatchId != null">
+        #{valvecontrolBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="openValveBatchId != null">
+        #{openValveBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="openValveBatchState != null">
+        #{openValveBatchState,jdbcType=VARCHAR},
+      </if>
+      <if test="closeValveBatchId != null">
+        #{closeValveBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="closeValveBatchState != null">
+        #{closeValveBatchState,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.goldcard.usmart.domain.Meter">
+    update meter
+    <set>
+      <if test="meterParamValue != null">
+        meter_Param_Value = #{meterParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="mtId != null">
+        mt_id = #{mtId,jdbcType=VARCHAR},
+      </if>
+      <if test="meterNo != null">
+        meter_no = #{meterNo,jdbcType=VARCHAR},
+      </if>
+      <if test="assetDate != null">
+        asset_date = #{assetDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expireDate != null">
+        expire_date = #{expireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installStateId != null">
+        install_state_id = #{installStateId,jdbcType=VARCHAR},
+      </if>
+      <if test="addDes != null">
+        add_des = #{addDes,jdbcType=VARCHAR},
+      </if>
+      <if test="userNo != null">
+        user_no = #{userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerType != null">
+        customer_type = #{customerType,jdbcType=VARCHAR},
+      </if>
+      <if test="setUpTime != null">
+        set_up_time = #{setUpTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="setUpLocation != null">
+        set_up_location = #{setUpLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="gasEnvironment != null">
+        gas_environment = #{gasEnvironment,jdbcType=VARCHAR},
+      </if>
+      <if test="enableMeterReading != null">
+        enable_meter_reading = #{enableMeterReading,jdbcType=DECIMAL},
+      </if>
+      <if test="cardDirection != null">
+        card_direction = #{cardDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="gasDirection != null">
+        gas_direction = #{gasDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="valveStateId != null">
+        valve_state_id = #{valveStateId,jdbcType=VARCHAR},
+      </if>
+      <if test="valveStateTime != null">
+        valve_state_time = #{valveStateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterReading != null">
+        meter_reading = #{meterReading,jdbcType=DECIMAL},
+      </if>
+      <if test="meterReadingTime != null">
+        meter_reading_time = #{meterReadingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterParameter != null">
+        meter_parameter = #{meterParameter,jdbcType=VARCHAR},
+      </if>
+      <if test="meterTime != null">
+        meter_time = #{meterTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="signalGrade != null">
+        signal_grade = #{signalGrade,jdbcType=DECIMAL},
+      </if>
+      <if test="currentCellVoltage != null">
+        current_cell_voltage = #{currentCellVoltage,jdbcType=DECIMAL},
+      </if>
+      <if test="alertParamValue != null">
+        alert_Param_Value = #{alertParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="meterAlarmValue != null">
+        meter_Alarm_Value = #{meterAlarmValue,jdbcType=VARCHAR},
+      </if>
+      <if test="meterStateValue != null">
+        meter_State_Value = #{meterStateValue,jdbcType=VARCHAR},
+      </if>
+      <if test="priceId != null">
+        price_id = #{priceId,jdbcType=VARCHAR},
+      </if>
+      <if test="priceVersion != null">
+        price_version = #{priceVersion,jdbcType=DECIMAL},
+      </if>
+      <if test="lastPriceId != null">
+        Last_Price_Id = #{lastPriceId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastPriceVersion != null">
+        Last_Price_Version = #{lastPriceVersion,jdbcType=DECIMAL},
+      </if>
+      <if test="totalDebitQty != null">
+        total_debit_qty = #{totalDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="totalDebitNum != null">
+        total_debit_num = #{totalDebitNum,jdbcType=INTEGER},
+      </if>
+      <if test="totalDebitAmt != null">
+        total_debit_amt = #{totalDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitQty != null">
+        last_debit_qty = #{lastDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitAmt != null">
+        last_debit_amt = #{lastDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="lastDebitDate != null">
+        last_debit_date = #{lastDebitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterBalanceAmt != null">
+        meter_balance_amt = #{meterBalanceAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="meterBalanceQty != null">
+        meter_balance_qty = #{meterBalanceQty,jdbcType=DECIMAL},
+      </if>
+      <if test="meterDebitAmt != null">
+        meter_debit_amt = #{meterDebitAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="meterDebitQty != null">
+        meter_debit_qty = #{meterDebitQty,jdbcType=DECIMAL},
+      </if>
+      <if test="curPriceIndex != null">
+        cur_price_index = #{curPriceIndex,jdbcType=INTEGER},
+      </if>
+      <if test="dataDate != null">
+        data_date = #{dataDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastBillRead != null">
+        last_bill_read = #{lastBillRead,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleStartDay != null">
+        cycle_start_day = #{cycleStartDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cycleStartRead != null">
+        cycle_start_read = #{cycleStartRead,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleEndDay != null">
+        cycle_end_day = #{cycleEndDay,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oldMeterQty != null">
+        old_meter_qty = #{oldMeterQty,jdbcType=DECIMAL},
+      </if>
+      <if test="mobileCarrierId != null">
+        Mobile_Carrier_id = #{mobileCarrierId,jdbcType=VARCHAR},
+      </if>
+      <if test="simUim != null">
+        SIM_UIM = #{simUim,jdbcType=VARCHAR},
+      </if>
+      <if test="localIp != null">
+        Local_IP = #{localIp,jdbcType=VARCHAR},
+      </if>
+      <if test="localPort != null">
+        Local_Port = #{localPort,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedTime != null">
+        modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tenantId != null">
+        TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="modifior != null">
+        modifior = #{modifior,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="ptId != null">
+        PT_ID = #{ptId,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=VARCHAR},
+      </if>
+      <if test="devNo != null">
+        dev_no = #{devNo,jdbcType=VARCHAR},
+      </if>
+      <if test="slaveNo != null">
+        slave_no = #{slaveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="curPrice != null">
+        cur_price = #{curPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="devType != null">
+        dev_type = #{devType,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineState != null">
+        Online_state = #{onlineState,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null">
+        y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null">
+        x = #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="meterCollectionDate != null">
+        meter_collection_date = #{meterCollectionDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="meterPricingNum != null">
+        meter_pricing_num = #{meterPricingNum,jdbcType=INTEGER},
+      </if>
+      <if test="valveCtrlParamValue != null">
+        valve_ctrl_param_value = #{valveCtrlParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="priceParamValue != null">
+        Price_Param_Value = #{priceParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="devPtid != null">
+        dev_ptid = #{devPtid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCollectionReading != null">
+        last_collection_reading = #{lastCollectionReading,jdbcType=DECIMAL},
+      </if>
+      <if test="lastCollectionTime != null">
+        last_collection_time = #{lastCollectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="respDelayTime != null">
+        resp_delay_time = #{respDelayTime,jdbcType=INTEGER},
+      </if>
+      <if test="manuId != null">
+        manu_id = #{manuId,jdbcType=VARCHAR},
+      </if>
+      <if test="priceEffectiveDate != null">
+        price_effective_date = #{priceEffectiveDate,jdbcType=DATE},
+      </if>
+      <if test="eachSurplusQty != null">
+        each_surplus_qty = #{eachSurplusQty,jdbcType=VARCHAR},
+      </if>
+      <if test="collectorNo != null">
+        collector_no = #{collectorNo,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productMarking != null">
+        product_marking = #{productMarking,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolVersion != null">
+        protocol_version = #{protocolVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="upgradeStatus != null">
+        upgrade_status = #{upgradeStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNo != null">
+        wechat_no = #{wechatNo,jdbcType=VARCHAR},
+      </if>
+      <if test="protocolparamBatchId != null">
+        PROTOCOLPARAM_BATCH_ID = #{protocolparamBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmparamBatchId != null">
+        ALARMPARAM_BATCH_ID = #{alarmparamBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="valvecontrolBatchId != null">
+        VALVECONTROL_BATCH_ID = #{valvecontrolBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="openValveBatchId != null">
+        OPEN_VALVE_BATCH_ID = #{openValveBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="openValveBatchState != null">
+        OPEN_VALVE_BATCH_STATE = #{openValveBatchState,jdbcType=VARCHAR},
+      </if>
+      <if test="closeValveBatchId != null">
+        CLOSE_VALVE_BATCH_ID = #{closeValveBatchId,jdbcType=VARCHAR},
+      </if>
+      <if test="closeValveBatchState != null">
+        CLOSE_VALVE_BATCH_STATE = #{closeValveBatchState,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where meter_id = #{meterId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.goldcard.usmart.domain.Meter">
+    update meter
+    set meter_Param_Value = #{meterParamValue,jdbcType=VARCHAR},
+      mt_id = #{mtId,jdbcType=VARCHAR},
+      meter_no = #{meterNo,jdbcType=VARCHAR},
+      asset_date = #{assetDate,jdbcType=TIMESTAMP},
+      expire_date = #{expireDate,jdbcType=TIMESTAMP},
+      install_state_id = #{installStateId,jdbcType=VARCHAR},
+      add_des = #{addDes,jdbcType=VARCHAR},
+      user_no = #{userNo,jdbcType=VARCHAR},
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_type = #{customerType,jdbcType=VARCHAR},
+      set_up_time = #{setUpTime,jdbcType=TIMESTAMP},
+      set_up_location = #{setUpLocation,jdbcType=VARCHAR},
+      gas_environment = #{gasEnvironment,jdbcType=VARCHAR},
+      enable_meter_reading = #{enableMeterReading,jdbcType=DECIMAL},
+      card_direction = #{cardDirection,jdbcType=VARCHAR},
+      gas_direction = #{gasDirection,jdbcType=VARCHAR},
+      valve_state_id = #{valveStateId,jdbcType=VARCHAR},
+      valve_state_time = #{valveStateTime,jdbcType=TIMESTAMP},
+      meter_reading = #{meterReading,jdbcType=DECIMAL},
+      meter_reading_time = #{meterReadingTime,jdbcType=TIMESTAMP},
+      meter_parameter = #{meterParameter,jdbcType=VARCHAR},
+      meter_time = #{meterTime,jdbcType=TIMESTAMP},
+      signal_grade = #{signalGrade,jdbcType=DECIMAL},
+      current_cell_voltage = #{currentCellVoltage,jdbcType=DECIMAL},
+      alert_Param_Value = #{alertParamValue,jdbcType=VARCHAR},
+      meter_Alarm_Value = #{meterAlarmValue,jdbcType=VARCHAR},
+      meter_State_Value = #{meterStateValue,jdbcType=VARCHAR},
+      price_id = #{priceId,jdbcType=VARCHAR},
+      price_version = #{priceVersion,jdbcType=DECIMAL},
+      Last_Price_Id = #{lastPriceId,jdbcType=VARCHAR},
+      Last_Price_Version = #{lastPriceVersion,jdbcType=DECIMAL},
+      total_debit_qty = #{totalDebitQty,jdbcType=DECIMAL},
+      total_debit_num = #{totalDebitNum,jdbcType=INTEGER},
+      total_debit_amt = #{totalDebitAmt,jdbcType=DECIMAL},
+      last_debit_qty = #{lastDebitQty,jdbcType=DECIMAL},
+      last_debit_amt = #{lastDebitAmt,jdbcType=DECIMAL},
+      last_debit_date = #{lastDebitDate,jdbcType=TIMESTAMP},
+      meter_balance_amt = #{meterBalanceAmt,jdbcType=DECIMAL},
+      meter_balance_qty = #{meterBalanceQty,jdbcType=DECIMAL},
+      meter_debit_amt = #{meterDebitAmt,jdbcType=DECIMAL},
+      meter_debit_qty = #{meterDebitQty,jdbcType=DECIMAL},
+      cur_price_index = #{curPriceIndex,jdbcType=INTEGER},
+      data_date = #{dataDate,jdbcType=TIMESTAMP},
+      last_bill_read = #{lastBillRead,jdbcType=DECIMAL},
+      cycle_start_day = #{cycleStartDay,jdbcType=TIMESTAMP},
+      cycle_start_read = #{cycleStartRead,jdbcType=DECIMAL},
+      cycle_end_day = #{cycleEndDay,jdbcType=TIMESTAMP},
+      old_meter_qty = #{oldMeterQty,jdbcType=DECIMAL},
+      Mobile_Carrier_id = #{mobileCarrierId,jdbcType=VARCHAR},
+      SIM_UIM = #{simUim,jdbcType=VARCHAR},
+      Local_IP = #{localIp,jdbcType=VARCHAR},
+      Local_Port = #{localPort,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      org_id = #{orgId,jdbcType=VARCHAR},
+      modified_time = #{modifiedTime,jdbcType=TIMESTAMP},
+      TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      modifior = #{modifior,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      creator = #{creator,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      PT_ID = #{ptId,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=VARCHAR},
+      dev_no = #{devNo,jdbcType=VARCHAR},
+      slave_no = #{slaveNo,jdbcType=VARCHAR},
+      cur_price = #{curPrice,jdbcType=DECIMAL},
+      dev_type = #{devType,jdbcType=VARCHAR},
+      Online_state = #{onlineState,jdbcType=VARCHAR},
+      y = #{y,jdbcType=VARCHAR},
+      x = #{x,jdbcType=VARCHAR},
+      meter_collection_date = #{meterCollectionDate,jdbcType=TIMESTAMP},
+      meter_pricing_num = #{meterPricingNum,jdbcType=INTEGER},
+      valve_ctrl_param_value = #{valveCtrlParamValue,jdbcType=VARCHAR},
+      Price_Param_Value = #{priceParamValue,jdbcType=VARCHAR},
+      dev_ptid = #{devPtid,jdbcType=VARCHAR},
+      last_collection_reading = #{lastCollectionReading,jdbcType=DECIMAL},
+      last_collection_time = #{lastCollectionTime,jdbcType=TIMESTAMP},
+      resp_delay_time = #{respDelayTime,jdbcType=INTEGER},
+      manu_id = #{manuId,jdbcType=VARCHAR},
+      price_effective_date = #{priceEffectiveDate,jdbcType=DATE},
+      each_surplus_qty = #{eachSurplusQty,jdbcType=VARCHAR},
+      collector_no = #{collectorNo,jdbcType=VARCHAR},
+      phone_no = #{phoneNo,jdbcType=VARCHAR},
+      product_marking = #{productMarking,jdbcType=VARCHAR},
+      protocol_version = #{protocolVersion,jdbcType=VARCHAR},
+      upgrade_status = #{upgradeStatus,jdbcType=VARCHAR},
+      wechat_no = #{wechatNo,jdbcType=VARCHAR},
+      PROTOCOLPARAM_BATCH_ID = #{protocolparamBatchId,jdbcType=VARCHAR},
+      ALARMPARAM_BATCH_ID = #{alarmparamBatchId,jdbcType=VARCHAR},
+      VALVECONTROL_BATCH_ID = #{valvecontrolBatchId,jdbcType=VARCHAR},
+      OPEN_VALVE_BATCH_ID = #{openValveBatchId,jdbcType=VARCHAR},
+      OPEN_VALVE_BATCH_STATE = #{openValveBatchState,jdbcType=VARCHAR},
+      CLOSE_VALVE_BATCH_ID = #{closeValveBatchId,jdbcType=VARCHAR},
+      CLOSE_VALVE_BATCH_STATE = #{closeValveBatchState,jdbcType=VARCHAR}
+    where meter_id = #{meterId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="countWithResidentMeter" resultType="java.lang.Long"
+    parameterType="com.goldcard.usmart.domain.report.query.CollectionRecordQueryDTO">
+    select
+    count(1)
+    from meter where
+    (PT_ID = '6011001' or PT_ID = '6011007')
+    and TENANT_ID = #{tenantId}
+    and Org_ID like #{orgId}
+    <if test="customerName != null">
+      and customer_name like #{customerName}
+    </if>
+    <if test="eqNo != null">
+      and meter_no = #{eqNo}
+    </if>
+  </select>
+  <select id="countWithBusinessMeter" resultType="java.lang.Long"
+    parameterType="com.goldcard.usmart.domain.report.query.CollectionRecordQueryDTO">
+    select
+    count(1)
+    from meter where
+    (PT_ID = '6011002' or PT_ID = '6011008')
+    and TENANT_ID = #{tenantId}
+    and Org_ID like #{orgId}
+    <if test="customerName != null">
+      and customer_name like #{customerName}
+    </if>
+    <if test="eqNo != null">
+      and meter_no = #{eqNo}
+    </if>
+  </select>
+  <select id="countWithDTU" resultType="java.lang.Long"
+    parameterType="com.goldcard.usmart.domain.report.query.CollectionRecordQueryDTO">
+    select
+    count(1)
+    from meter where
+    (PT_ID = '6011005' or PT_ID = '6012011')
+    and TENANT_ID = #{tenantId}
+    and Org_ID like #{orgId}
+    <if test="customerName != null">
+      and customer_name like #{customerName}
+    </if>
+    <if test="eqNo != null">
+      and meter_no = #{eqNo}
+    </if>
+  </select>
+  <select id="countWithOther" resultType="java.lang.Long"
+          parameterType="com.goldcard.usmart.domain.report.query.CollectionRecordQueryDTO">
+    select
+    count(1)
+    from meter where
+    PT_ID not in ('6011005','6012011','6011002','6011008','6011001','6011007')
+    and TENANT_ID = #{tenantId}
+    and Org_ID like #{orgId}
+    <if test="customerName != null">
+      and customer_name like #{customerName}
+    </if>
+    <if test="eqNo != null">
+      and meter_no = #{eqNo}
+    </if>
+  </select>
+  
+</mapper>

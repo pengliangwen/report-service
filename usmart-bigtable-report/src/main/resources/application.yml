@@ -1,0 +1,64 @@
+server:
+  # Server bind address
+  port: "${HTTP_BIND_PORT:9900}"
+rocketmq:
+  rocketMqNameSrv: 10.200.1.150:9876
+  instructionConsumerId: instructionConsuer
+  instrucitonTopicName: persistenceMq
+report:
+  # 报表文件的存储路径（需要读写权限）
+  file-path: D:\Download\reportFile
+  # 每个租户允许同时进行的任务数。-1为不限制
+  tenant-task-limit: -1
+  # 报表文件生成后自动清理间隔时间（单位为分钟）
+  clean-after-build: 10080
+  # 报表文件下载后自动清理间隔时间（单位为分钟）
+  clean-after-download: 5
+  collectionRecordCount: 1000000
+log:
+  level: info
+express:
+  # 金智系统 http://ip:port
+  url: http://127.0.0.1:8788/express-web
+#  DataSource clickhouse
+spring:
+  datasource:
+    ch:
+      jdbc-url: jdbc:clickhouse://10.201.99.202:8123/usmart
+      username: root
+      password: abcd@1234
+      driver-class-name: ru.yandex.clickhouse.ClickHouseDriver
+      max-idle: 60
+      max-active: 100
+      max-lifetime: 86430000
+      log-abandoned: true
+      remove-abandoned: true
+      remove-abandoned-timeout: 60
+      initialize: false
+      sqlScriptEncoding: UTF-8
+    mysql:
+      jdbc-url: jdbc:mysql://10.200.1.151:3306/usmart?useUnicode=true&characterEncoding=utf8
+      username: usmart
+      password: usmart
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      max-idle: 60
+      max-active: 100
+      max-lifetime: 86430000
+      log-abandoned: true
+      remove-abandoned: true
+      remove-abandoned-timeout: 60
+      initialize: false
+      sqlScriptEncoding: UTF-8
+  redis:
+    host: 10.200.1.150
+    password: 
+    port: 6379
+    timeout: 5000
+    database: 0
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 60
+        max-wait: 5000
+        max-active: 100  
+    

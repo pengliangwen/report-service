@@ -1,0 +1,1 @@
+2019-03-19 13:38:01.106 [http-nio-9900-exec-7] WARN, c.g.u.s.impl.ReportExportServiceImpl: 查询参数存在SQL注入危险：ReportExportTasksReq[getReportType='collectionRecord', tenantId='0261', orgId='990101']

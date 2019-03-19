@@ -1,0 +1,514 @@
+2019-03-16 10:48:31.765 [main] ERROR, c.g.u.s.impl.CollectionRecordReport: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:90)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.findByQueryDTO(Unknown Source)
+	at com.goldcard.usmart.SpringBootBigTableTest.queryCHCollectionRecord(SpringBootBigTableTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:58)
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:28)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.checkForErrorAndThrow(ClickHouseStatementImpl.java:680)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.getInputStream(ClickHouseStatementImpl.java:512)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:105)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:89)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:85)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.execute(ClickHouseStatementImpl.java:165)
+	at ru.yandex.clickhouse.ClickHousePreparedStatementImpl.execute(ClickHousePreparedStatementImpl.java:360)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy104.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 44 common frames omitted
+Caused by: java.lang.Throwable: Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:53)
+	... 74 common frames omitted
+2019-03-16 10:50:07.075 [main] ERROR, c.g.u.s.impl.CollectionRecordReport: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:90)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.findByQueryDTO(Unknown Source)
+	at com.goldcard.usmart.SpringBootBigTableTest.queryCHCollectionRecord(SpringBootBigTableTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:58)
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:28)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.checkForErrorAndThrow(ClickHouseStatementImpl.java:680)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.getInputStream(ClickHouseStatementImpl.java:512)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:105)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:89)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:85)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.execute(ClickHouseStatementImpl.java:165)
+	at ru.yandex.clickhouse.ClickHousePreparedStatementImpl.execute(ClickHousePreparedStatementImpl.java:360)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy104.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 44 common frames omitted
+Caused by: java.lang.Throwable: Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:53)
+	... 74 common frames omitted
+2019-03-16 10:55:35.543 [main] ERROR, c.g.u.s.impl.CollectionRecordReport: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error querying database.  Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+### The error may exist in file [D:\cloudworkspace\usmart-bigtable-report\target\classes\mybatis\ch\CollectionRecordMapper.xml]
+### The error may involve com.goldcard.usmart.dao.ch.CollectionRecordMapper.findByQueryDTO-Inline
+### The error occurred while setting parameters
+### SQL: select     b.EQ_NO,     b.Create_Time,     b.Data_Date,     b.Meter_Time,     b.Standard_Sum,     b.Working_Sum,     b.Balance_Quantity,     b.Standard_Flow,     b.Working_Flow,     b.Temperature,     b.Pressure,     b.customer_name         FROM collection_record_customer b      WHERE  Create_Time  >=   toDateTime(toDate(?)) and Create_Time   <  addDays(toDateTime(toDate(?)),1)                                                and  TENANT_ID = ? and like(Org_ID,?)
+### Cause: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+; uncategorized SQLException for SQL []; SQL state [null]; error code [47]; ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+; nested exception is ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:90)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:82)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446)
+	at com.sun.proxy.$Proxy70.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy78.findByQueryDTO(Unknown Source)
+	at com.goldcard.usmart.SpringBootBigTableTest.queryCHCollectionRecord(SpringBootBigTableTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: ru.yandex.clickhouse.except.ClickHouseException: ClickHouse exception, code: 47, host: 10.201.99.202, port: 8123; Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:58)
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:28)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.checkForErrorAndThrow(ClickHouseStatementImpl.java:680)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.getInputStream(ClickHouseStatementImpl.java:512)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:105)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:89)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.executeQuery(ClickHouseStatementImpl.java:85)
+	at ru.yandex.clickhouse.ClickHouseStatementImpl.execute(ClickHouseStatementImpl.java:165)
+	at ru.yandex.clickhouse.ClickHousePreparedStatementImpl.execute(ClickHousePreparedStatementImpl.java:360)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy104.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	... 44 common frames omitted
+Caused by: java.lang.Throwable: Code: 47, e.displayText() = DB::Exception: Unknown identifier: customer_name, e.what() = DB::Exception
+
+	at ru.yandex.clickhouse.except.ClickHouseExceptionSpecifier.specify(ClickHouseExceptionSpecifier.java:53)
+	... 74 common frames omitted
+2019-03-18 16:37:10.470 [main] ERROR, o.apache.catalina.util.LifecycleBase: Failed to start component [Connector[HTTP/1.1-9900]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at com.goldcard.usmart.SpringBootBigTableServer.main(SpringBootBigTableServer.java:31)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 12 common frames omitted
+2019-03-18 16:37:10.539 [main] ERROR, o.s.b.d.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 9900 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 9900, or configure this application to listen on another port.
+
+2019-03-18 17:15:29.572 [export-task-1] ERROR, c.g.u.AsyncConfiguration$$EnhancerBySpringCGLIB$$607fde7c: Throwable:java.lang.NullPointerException Method:generate params:[554, CollectionRecordQueryDTO{eqNo='null', customerName='null', collectionTimeStart=2019-02-01, collectionTimeEnd=2019-02-03, temperatureStart='null', temperatureEnd='null', pressureStart='null', pressureEnd='null', standardFlowStart='null', standardFlowEnd='null', reportType='collectionRecord', tenantId='0261', orgId='990101%', staffId='201812240007088330001327425324', staffName='chl1001'}, com.goldcard.usmart.service.impl.CollectionRecordReport@4af865f7]
+2019-03-18 17:18:08.598 [export-task-1] ERROR, c.g.u.AsyncConfiguration$$EnhancerBySpringCGLIB$$e76740ed: Throwable:java.lang.NullPointerException Method:generate params:[555, CollectionRecordQueryDTO{eqNo='null', customerName='null', collectionTimeStart=2019-02-01, collectionTimeEnd=2019-02-03, temperatureStart='null', temperatureEnd='null', pressureStart='null', pressureEnd='null', standardFlowStart='null', standardFlowEnd='null', reportType='collectionRecord', tenantId='0261', orgId='990101%', staffId='201812240007088330001327425324', staffName='chl1001'}, com.goldcard.usmart.service.impl.CollectionRecordReport@6fdf5de4]
+2019-03-18 17:37:47.592 [http-nio-9900-exec-4] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 该查询条件下无数据
+2019-03-18 19:16:35.186 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 服务内部错误：
+org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 1 second(s)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:268)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.convertLettuceAccessException(LettuceStringCommands.java:799)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:68)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.get(DefaultedRedisConnection.java:253)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:57)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:59)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:224)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:184)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:95)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
+	at com.goldcard.usmart.redis.RedisService.get(RedisService.java:102)
+	at com.goldcard.usmart.service.impl.ReportExportServiceImpl.submitReportExportTask(ReportExportServiceImpl.java:78)
+	at com.goldcard.usmart.service.impl.ReportExportServiceImpl$$FastClassBySpringCGLIB$$e1d0de01.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684)
+	at com.goldcard.usmart.service.impl.ReportExportServiceImpl$$EnhancerBySpringCGLIB$$429fd48a.submitReportExportTask(<generated>)
+	at com.goldcard.usmart.controller.ReportExportController.submitExportTask(ReportExportController.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 1 second(s)
+	at io.lettuce.core.ExceptionFactory.createTimeoutException(ExceptionFactory.java:51)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:114)
+	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:69)
+	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:80)
+	at com.sun.proxy.$Proxy90.get(Unknown Source)
+	at org.springframework.data.redis.connection.lettuce.LettuceStringCommands.get(LettuceStringCommands.java:66)
+	... 68 common frames omitted
+2019-03-18 19:45:21.318 [http-nio-9900-exec-7] ERROR, c.g.u.s.impl.ReportExportServiceImpl: 重复提交相同任务：dto:{"eqNo":null,"customerName":null,"collectionTimeStart":"2019-01-05","collectionTimeEnd":"2019-01-07","temperatureStart":null,"temperatureEnd":null,"pressureStart":null,"pressureEnd":null,"standardFlowStart":null,"standardFlowEnd":null,"reportType":"collectionRecord","tenantId":"0261","orgId":"990101","staffId":"201812240007088330001327425324","staffName":"chl1001"}
+2019-03-18 19:45:21.323 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 请勿重复提交相同任务
+2019-03-18 19:45:21.374 [http-nio-9900-exec-10] ERROR, c.g.u.s.impl.ReportExportServiceImpl: 重复提交相同任务：dto:{"eqNo":null,"customerName":null,"collectionTimeStart":"2019-01-05","collectionTimeEnd":"2019-01-07","temperatureStart":null,"temperatureEnd":null,"pressureStart":null,"pressureEnd":null,"standardFlowStart":null,"standardFlowEnd":null,"reportType":"collectionRecord","tenantId":"0261","orgId":"990101","staffId":"201812240007088330001327425324","staffName":"chl1001"}
+2019-03-18 19:45:21.375 [http-nio-9900-exec-10] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 请勿重复提交相同任务
+2019-03-18 19:45:21.619 [http-nio-9900-exec-2] ERROR, c.g.u.s.impl.ReportExportServiceImpl: 重复提交相同任务：dto:{"eqNo":null,"customerName":null,"collectionTimeStart":"2019-01-21","collectionTimeEnd":"2019-01-23","temperatureStart":null,"temperatureEnd":null,"pressureStart":null,"pressureEnd":null,"standardFlowStart":null,"standardFlowEnd":null,"reportType":"collectionRecord","tenantId":"0261","orgId":"990101","staffId":"201812240007088330001327425324","staffName":"chl1001"}
+2019-03-18 19:45:21.620 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 请勿重复提交相同任务
+2019-03-18 20:19:00.675 [http-nio-9900-exec-4] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.718 [http-nio-9900-exec-6] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.752 [http-nio-9900-exec-8] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.780 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.806 [http-nio-9900-exec-10] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.851 [http-nio-9900-exec-1] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.880 [http-nio-9900-exec-5] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.912 [http-nio-9900-exec-9] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.942 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:00.972 [http-nio-9900-exec-3] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.030 [http-nio-9900-exec-4] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.075 [http-nio-9900-exec-6] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.135 [http-nio-9900-exec-8] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.169 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.202 [http-nio-9900-exec-10] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.235 [http-nio-9900-exec-1] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.264 [http-nio-9900-exec-5] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.291 [http-nio-9900-exec-9] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.318 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:19:01.345 [http-nio-9900-exec-3] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.210 [http-nio-9900-exec-4] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.239 [http-nio-9900-exec-6] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.273 [http-nio-9900-exec-8] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.306 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.358 [http-nio-9900-exec-10] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.396 [http-nio-9900-exec-1] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.434 [http-nio-9900-exec-5] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.474 [http-nio-9900-exec-9] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.516 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.542 [http-nio-9900-exec-3] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.577 [http-nio-9900-exec-4] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.620 [http-nio-9900-exec-6] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.656 [http-nio-9900-exec-8] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.683 [http-nio-9900-exec-7] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.709 [http-nio-9900-exec-10] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.737 [http-nio-9900-exec-1] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.768 [http-nio-9900-exec-5] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.800 [http-nio-9900-exec-9] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.825 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:23:47.859 [http-nio-9900-exec-3] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 任务查询格式异常
+2019-03-18 20:25:51.831 [http-nio-9900-exec-1] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 起始日期必须小于结束日期!
+2019-03-18 20:25:51.928 [http-nio-9900-exec-5] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 起始日期必须小于结束日期!
+2019-03-18 20:25:52.001 [http-nio-9900-exec-9] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 起始日期必须小于结束日期!
+2019-03-18 20:25:52.053 [http-nio-9900-exec-2] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 起始日期必须小于结束日期!
+2019-03-18 20:25:52.124 [http-nio-9900-exec-3] ERROR, c.g.u.c.ReportExportController: 请求内容异常：java.lang.IllegalArgumentException: 起始日期必须小于结束日期!
